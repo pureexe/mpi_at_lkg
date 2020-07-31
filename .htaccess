@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule data/scenes.json scenes.php
