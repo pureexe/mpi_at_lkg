@@ -358,8 +358,9 @@ function HoloPlay(scene, camera, renderer, focalPointVector, constantCenter, hiR
             var subcamera = arraycamera.cameras[ i ];
             subcamera.position.copy(origPosition);
             subcamera.rotation.copy(camera.rotation);
-
-            var radians = THREE.Math.degToRad(THREE.Math.lerp(start, end, i/(numViews - 1)));
+            // mod from looking glass
+            //var radians = THREE.Math.degToRad(THREE.Math.lerp(start, end, i/(numViews - 1)));
+            var radians = THREE.Math.degToRad(THREE.Math.lerp(start, end, 1 - i/(numViews - 1)));
 
             //angle needs to be in radians
             var offsetX = distance * Math.tan(radians);

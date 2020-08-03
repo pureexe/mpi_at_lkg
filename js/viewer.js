@@ -21,7 +21,7 @@
           transparent: true,
           side: THREE.DoubleSide,
         });
-        scale = (-depth + 0.5) / 0.5 / 2
+        scale = (-depth)
         var geometry = new THREE.PlaneGeometry(1*scale,3 / 4 * scale,1);
         plane = new THREE.Mesh(geometry, material);
         plane.position.z = depth
@@ -45,7 +45,7 @@
         function init(){
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(70, window.innerWidth/window.innerHeight, 0.1, 1000);
-            camera.position.set(0,0,0.5);
+            camera.position.set(0,0,0);
             renderer = new THREE.WebGLRenderer();
             renderer.setSize(window.innerWidth, window.innerHeight);
             document.body.appendChild(renderer.domElement);
@@ -112,6 +112,7 @@ if(urlParams.has('scene')){
         init();
         RunApp();
     }).catch(function(e){
+        console.log(e)
         alert('Cannot get config.json!');
     });
 }else{
