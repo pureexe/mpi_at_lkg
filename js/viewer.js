@@ -30,7 +30,7 @@
       
       
 
-      var scene, camera, renderer, holoplay, sceneCfg, urlParams;
+      var scene, camera, renderer, controls, holoplay, sceneCfg, urlParams;
       var enableHoloplay = true;
 
         //Lighting elements
@@ -53,7 +53,7 @@
             controls.minAzimuthAngle = -Math.PI /2
             controls.maxAzimuthAngle = Math.PI /2
             controls.target.set( 0, 0, -0.5 );
-            controls.enablePan = false;
+            controls.enablePan = true;
             if(enableHoloplay){
               holoplay = new HoloPlay(scene, camera, renderer);
             }
