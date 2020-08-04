@@ -85,6 +85,10 @@ function updatePlaneScaling(pSize){
   for(let i = 0; i < planes.length; i++){
     planes[i].position.z = -sceneCfg['planes'][i] * planesScaling;
   }
+  dmin = Math.min(...sceneCfg['planes']);
+  dmax = Math.max(...sceneCfg['planes']);
+  pivot = (dmin + dmax) / 2 * planesScaling
+  controls.target.set( 0, 0, -pivot);
 }
 
 // Handle Keyboard input
